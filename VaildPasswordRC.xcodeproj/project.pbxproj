@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4877C876F6096EFF5D616C8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED2220F9F33C8887B7AAB19 /* libPods.a */; };
 		4D18E1231BDC062D00B84B2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D18E1221BDC062D00B84B2E /* main.m */; };
 		4D18E1261BDC062D00B84B2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D18E1251BDC062D00B84B2E /* AppDelegate.m */; };
 		4D18E1291BDC062D00B84B2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D18E1281BDC062D00B84B2E /* ViewController.m */; };
@@ -40,6 +41,9 @@
 		4D18E1371BDC062D00B84B2E /* VaildPasswordRCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaildPasswordRCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D18E13B1BDC062D00B84B2E /* VaildPasswordRCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VaildPasswordRCUITests.m; sourceTree = "<group>"; };
 		4D18E13D1BDC062D00B84B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED2220F9F33C8887B7AAB19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA948EBB95BB7AEFB0EE11D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E489D8796EF9BF94806686D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4877C876F6096EFF5D616C8A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				4D18E1201BDC062D00B84B2E /* VaildPasswordRC */,
 				4D18E13A1BDC062D00B84B2E /* VaildPasswordRCUITests */,
 				4D18E11F1BDC062D00B84B2E /* Products */,
+				622977AAF2152D4FD7233864 /* Pods */,
+				DFB295A94D345C5EE633030F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +118,23 @@
 			path = VaildPasswordRCUITests;
 			sourceTree = "<group>";
 		};
+		622977AAF2152D4FD7233864 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBA948EBB95BB7AEFB0EE11D /* Pods.debug.xcconfig */,
+				E489D8796EF9BF94806686D9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFB295A94D345C5EE633030F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED2220F9F33C8887B7AAB19 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D18E1401BDC062D00B84B2E /* Build configuration list for PBXNativeTarget "VaildPasswordRC" */;
 			buildPhases = (
+				5832D65A5BE7F39363748A3C /* Check Pods Manifest.lock */,
 				4D18E11A1BDC062D00B84B2E /* Sources */,
 				4D18E11B1BDC062D00B84B2E /* Frameworks */,
 				4D18E11C1BDC062D00B84B2E /* Resources */,
+				C30F6252D209DD909635EB5D /* Embed Pods Frameworks */,
+				9FD44057E8699F8CACBFBE39 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5832D65A5BE7F39363748A3C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD44057E8699F8CACBFBE39 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30F6252D209DD909635EB5D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D18E11A1BDC062D00B84B2E /* Sources */ = {
@@ -337,6 +412,7 @@
 		};
 		4D18E1411BDC062D00B84B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA948EBB95BB7AEFB0EE11D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VaildPasswordRC/Info.plist;
@@ -348,6 +424,7 @@
 		};
 		4D18E1421BDC062D00B84B2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E489D8796EF9BF94806686D9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VaildPasswordRC/Info.plist;
@@ -400,6 +477,7 @@
 				4D18E1421BDC062D00B84B2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D18E1431BDC062D00B84B2E /* Build configuration list for PBXNativeTarget "VaildPasswordRCUITests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +486,7 @@
 				4D18E1451BDC062D00B84B2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
