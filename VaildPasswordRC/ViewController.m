@@ -60,7 +60,7 @@
     BOOL textLimitReached = (password.length >= 8 && password.length <= 16);
     BOOL hasNumber = [password rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound; //a
     BOOL doesNotHaveSpace = [password rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]].location == NSNotFound; //a
-    BOOL isEqual = (BOOL)strcmp(&firstLetter, &secondLetter);
+    int isEqual = strcmp(&firstLetter, &secondLetter);
     BOOL isLetter = [[NSCharacterSet letterCharacterSet]characterIsMember:[password characterAtIndex:0]];// f
     BOOL containsCharacters = ([password containsString:@"#"] //b1
                                || [password containsString:@"@"] //b2
@@ -73,7 +73,7 @@
     BOOL hasLowercase = [password rangeOfCharacterFromSet:
                          [NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound; // h
     
-    return textLimitReached && hasNumber && doesNotHaveSpace && isLetter && containsCharacters && hasUppercase && hasLowercase && isEqual;
+    return textLimitReached && hasNumber && doesNotHaveSpace && isLetter && containsCharacters && hasUppercase && hasLowercase && isEqual == 0;
 }
 
 
