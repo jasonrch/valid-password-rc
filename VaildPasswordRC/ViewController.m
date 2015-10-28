@@ -69,11 +69,11 @@
                                || [password containsString:@"!"] //b5
                                || [password containsString:@"&"]); //b6
     BOOL hasUppercase = [password rangeOfCharacterFromSet:
-                         [NSCharacterSet lowercaseLetterCharacterSet]].location != NSNotFound;// g
+                         [NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound;// g
     BOOL hasLowercase = [password rangeOfCharacterFromSet:
-                         [NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound; // h
+                         [NSCharacterSet lowercaseLetterCharacterSet]].location != NSNotFound; // h
     
-    return textLimitReached && hasNumber && doesNotHaveSpace && isLetter && containsCharacters && hasUppercase && hasLowercase && isEqual == 0;
+    return textLimitReached && hasNumber && doesNotHaveSpace && isLetter && containsCharacters && hasUppercase && hasLowercase && firstLetter != secondLetter;
 }
 
 
